@@ -13,7 +13,7 @@ namespace xxzhsFetcher
         {
             Dictionary<string, string> titleIDList = new Dictionary<string, string>(); //<title>, <videoID>
             Dictionary<string, KeyValuePair<string, List<string>>> videoList = new Dictionary<string, KeyValuePair<string, List<string>>>(); //<title>, <videoID>, list of URL
-            string targetDir = @"F:\Temp\xxzhs";
+            string targetDir = @"D:\Files\Temp\xxzhs";
             string achieveFilename = Path.Combine(targetDir, "archieve.txt");
             List<string> achieveList = new List<string>(); //title
 
@@ -33,7 +33,7 @@ namespace xxzhsFetcher
                 }
             }
 
-            for (int loop = 127; loop <= 127; loop++)
+            for (int loop = 198; loop <= 216; loop++)
             {
                 WebClient client = new WebClient();
                 client.Headers.Add("user-agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A523 Safari/8536.25");
@@ -89,7 +89,7 @@ namespace xxzhsFetcher
                         videoURL = videoURL.Substring(0, videoURL.IndexOf(".mp4\"") + 4);
                     }
                     //Console.WriteLine("\t {0}", videoURL);
-                    if (videoURL.Contains("aac32") && videoURL.Contains("h2648") && !videoURLs.Contains(videoURL))
+                    if (videoURL.Contains("aac16") && videoURL.Contains("h2642000000") && !videoURLs.Contains(videoURL))
                         videoURLs.Add(videoURL);
 
                     currentIndex += endIndex;
